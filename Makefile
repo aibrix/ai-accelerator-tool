@@ -273,10 +273,7 @@ $(BUILD_DIRS):
 
 lib-injection: # @HELP build lib/so_injection
 lib-injection:
-	@rm -rf lib/so_injection/build && rm  -f lib/so_injection/CMakeCache.txt
-	@mkdir -p lib/so_injection/build
-	@cd lib/so_injection/build && cmake ..
-	@cd lib/so_injection/build && cmake --build .
+	@cd lib/build && cmake .. && make
 
 clean: # @HELP removes built binaries and temporary files
 clean: bin-clean

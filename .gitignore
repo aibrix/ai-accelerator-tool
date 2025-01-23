@@ -52,19 +52,9 @@ debug
 /vendor/
 vendor/
 /Godeps/
-third_party/
 
 # Binary files
 ai-accelerator-tool
-
-# Build directory
-lib/so_injection/build/ 
-lib/so_injection/CMakeCache.txt
-lib/so_injection/CMakeFiles/
-lib/so_injection/cmake_install.cmake
-lib/so_injection/Makefile
-lib/build/
-lib/test_utils/
 
 # Go workspace file
 go.work
@@ -72,3 +62,6 @@ go.work.sum
 
 # env file
 .env
+
+# build files
+lib/build/*
