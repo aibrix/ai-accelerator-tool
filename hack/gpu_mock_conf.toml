@@ -1,0 +1,36 @@
+# this ia an example config file of version 0.1.0 to explain available gpu mock configurations
+version = "0.1.0"
+
+[gpus]
+## following are node-level configs
+card_count = 4         # gpu card count
+nvml_init_error = 9    # change nvmlInit return value, setting this will skip real init, see nvmlReturn_t below
+
+
+## following are card-level configs
+# config gpu card at index 0, note that the config will not be sanitized and whether the mocked scenario makes sense is up to you
+[gpus.0]
+remapping_pending = true
+dram_ue = 7
+
+# config gpu card at index 1, all available configs are listed below
+[gpus.1]
+device_name = "A800"                                    # device name
+arch = 7                                                # architecture, see nvmlDeviceArchitecture_t below
+pci = "00:00"                                           # pci bus_id:device_id
+uuid = "xxxxx"                                          # card uuid
+link_gen = 4                                            # pcie link generation
+link_width_current = 16                                 # pcie link width current
+link_width_max = 16                                     # pcie link width max
+nvlink_active = [true, true, true, true, true, true]    # if nvlink lane is active
+remapping_failure = false                               # if there is a row-remapping failure, available for ampere and newer architecture
+remapping_pending = false                               # if there is pending row-remapping, available for ampere and newer architecture
+sram_ue = 0                                             # count of uncorrectable ecc errors happened in SRAM
+dram_ue = 0                                             # count of uncorrectable ecc errors happened in DRAM
+dram_ce = 0                                             # count of correctable ecc errors happended in DRAM
+retired_page_sbe = 0                                    # count of retired pages caused by single bit error, available for architectures before ampere
+retired_page_dbe = 0                                    # count of retired pages caused by double bit error, available for architectures before ampere
+retired_page_pending = false                            # if there is pending retired page
+uncorrectable_agg_l1 = 0                                # aggregated count of uncorrectable ecc errors happened in L1 cache
+uncorrectable_agg_l2 = 0                                # aggregated count of uncorrectable ecc errors happened in L2 cache
+uncorrectable_agg_reg = 0                               # aggregated count of uncorrectable ecc errors happened in register file
