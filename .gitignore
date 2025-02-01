@@ -53,9 +53,6 @@ debug
 vendor/
 /Godeps/
 
-# Binary files
-ai-accelerator-tool
-
 # Go workspace file
 go.work
 go.work.sum
