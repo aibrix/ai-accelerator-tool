@@ -25,7 +25,7 @@ make test-local
 
 # Build
 
-## Build gpu injection library
+## Build gpu injection library (Only supports compilation in Linux environment)
 
 If you are developing on MacOS, you can consider using a docker container for compilation. 
 Taking the `ubuntu:22.04` image as an example, you need to install the following dependencies in the container and mount the project into the container for compilation.
@@ -55,9 +55,6 @@ git submodule update --init --recursive
 make lib-injection
 cp lib/build/lib/libdevso-injection.so pkg/mock/resources/injectiond.so
 ```
-
-Note:
-- Although it can be compiled successfully on MacOS, it is actually used in Linux, so consider compiling only in Linux environment
 
 ## Build gpu-diagnosis
 

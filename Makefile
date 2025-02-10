@@ -273,6 +273,8 @@ $(BUILD_DIRS):
 
 lib-injection: # @HELP build lib/so_injection
 lib-injection:
+	@rm -rf lib/build
+	@mkdir -p lib/build
 	@cd lib/build && cmake .. && make
 
 clean: # @HELP removes built binaries and temporary files
