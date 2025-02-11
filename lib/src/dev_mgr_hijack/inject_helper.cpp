@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-namespace injector {
 
 typedef void *(*dlsym_t)(void *, const char *);
 
@@ -30,6 +29,5 @@ void *dlsym(void *handle, const char *symbol) {
   return result;
 }
 
-} // namespace injector
 
 #endif // INJECT_DL
